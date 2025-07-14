@@ -9,7 +9,7 @@ const githubRoutes = require('./routes/githubRoutes');
 const app = express();
 
 // Middleware
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:5173', credentials: true }));
+app.use(cors({ origin: process.env.FRONTEND_URL || 'https://github-wrapped-frontend-chi.vercel.app', credentials: true }));
 app.use(express.json());
 
 // Session setup
