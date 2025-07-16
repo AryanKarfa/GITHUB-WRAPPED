@@ -9,7 +9,7 @@ const githubRoutes = require('./routes/githubRoutes');
 const app = express();
 
 // Middleware
-app.use(cors({ origin: process.env.FRONTEND_URL || 'https://github-wrapped-frontend-chi.vercel.app', credentials: true }));
+app.use(cors({ origin: process.env.FRONTEND_URL || '', credentials: true }));
 app.use(express.json());
 
 // Session setup
@@ -34,7 +34,7 @@ app.get('/auth/github', passport.authenticate('github', { scope: ['user', 'repo'
 app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   (req, res) => {
-    res.redirect(process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/dashboard` : 'http://localhost:5173/dashboard');
+    res.redirect(process.env.FRONTEND_URL ? `${process.env.FRONTEND_URL}/dashboard` : '/dashboard');
   }
 );
 
