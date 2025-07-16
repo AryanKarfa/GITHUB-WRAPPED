@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Landing = () => {
   const handleLogin = () => {
-    window.location.href = `${import.meta.env.VITE_BACKEND_URL || 'https://github-wrapped-vqht.onrender.com'}/auth/github`;
+    window.location.href = `${import.meta.env.VITE_BACKEND_URL || ''}/auth/github`;
   };
 
   return (
